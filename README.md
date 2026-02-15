@@ -2,41 +2,47 @@ Bellcorp Event Management Application
 
 A full-stack Event Management platform where users can register, log in, discover events, and manage their event registrations through a personalized dashboard. The application implements secure JWT-based authentication, dynamic search and filtering, and backend validation for event capacity and duplicate registrations.
 
-Tech Stack
+🛠 Tech Stack
 Frontend
-
-React (Vite)
-
-React Router
-
-Context API
+ *React (Vite)
+ *React Router
+ *Context API
 
 Backend
-
-Node.js
-
-Express.js
-
-MongoDB (Mongoose)
-
-JWT Authentication
-
-bcryptjs
+ *Node.js
+ *Express.js
+ *MongoDB (Mongoose)
+ *JWT Authentication
+ *bcryptjs
 
 Tools
+ *Git & GitHub
+ *MongoDB Atlas
+ *Postman / Insomnia
 
-Git & GitHub
+📁 Project Structure
+root/
+├── server/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── .env
+│   └── server.js
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   └── main.jsx
+│   └── package.json
+└── README.md
 
-MongoDB Atlas
-
-Postman / Insomnia
-
-Running the Project Locally
+🚀 Running the Project Locally
 1. Clone the Repository
-git clone https://github.com/YOUR-USERNAME/bellcorp-event-management-application.git
+git clone https://github.com/vinonaval3-boop/bellcorp-event-management-application.git
 cd bellcorp-event-management-application
 
-Backend Setup
+🔹 Backend Setup
 2. Navigate to the Server Folder
 cd server
 
@@ -44,26 +50,20 @@ cd server
 npm install
 
 4. Create Environment File
-
 Inside the server folder, create a .env file and add:
-
-MONGO_URI=your_mongodb_atlas_connection_string
-JWT_SECRET=your_secret_key
-PORT=5000
-
+  MONGO_URI=your_mongodb_atlas_connection_string
+  JWT_SECRET=your_secret_key
+  PORT=5000
 
 Ensure your MongoDB Atlas network access allows your IP address.
 
 5. Start the Backend Server
 npm start
 
-
 The backend will run at:
-
 http://localhost:5000
 
-Frontend Setup
-
+🔹 Frontend Setup
 Open a new terminal window.
 
 6. Navigate to the Client Folder
@@ -73,35 +73,34 @@ cd client
 npm install
 
 8. Create Environment File
-
 Inside the client folder, create a .env file and add:
-
-VITE_BASE_URL=http://localhost:5000
+  VITE_BASE_URL=http://localhost:5000
 
 9. Start the Frontend
 npm run dev
 
-
 The frontend will run at:
-
 http://localhost:5173
 
-API Endpoints (Examples)
+🔗 API Endpoints (Examples)
 
-POST /api/auth/register
+   *POST /api/auth/register
+   *POST /api/auth/login
+   *GET /api/events
+   *POST /api/registrations
+   
+🌐 Deployment
 
-POST /api/auth/login
+   *Backend hosted on Render
+   *Frontend hosted on Vercel
+   *Database hosted on MongoDB Atlas
+   
+📌 Notes
 
-GET /api/events
+   *Backend validates event capacity before registration.
+   *Duplicate registrations are prevented at the server level.
+   *JWT middleware protects sensitive routes.
+   *Environment variables must be configured correctly before running the application.
 
-POST /api/registrations
 
-Notes
-
-Backend validates event capacity before registration.
-
-Duplicate registrations are prevented at the server level.
-
-JWT middleware protects sensitive routes.
-
-Environment variables must be configured correctly before running the application.
+   
